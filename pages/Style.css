@@ -1,0 +1,203 @@
+/*Style de la section des destinations*/
+.destinations-grid {
+    width: min(1100px, calc(100% - 32px));
+    margin: 24px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.destination-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.destination-link:hover {
+    transform: translateY(-4px);
+}
+
+.destination-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s ease;
+}
+
+.destination-link:hover .destination-card {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.destination-card h2 {
+    margin-top: 0;
+}
+
+.destination-card p {
+    margin: 0 0 8px;
+}
+/*Style du menu déroulant de la réservation*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+.dropbtn{
+    background-color: rgba(165, 42, 42, 0.613) ;
+    color: white   ;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: rgba(165, 42, 42, 0.613);
+}
+
+/* Styles pour les pages détails des destinations */
+.destination-detail {
+    width: min(900px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: rgba(165, 42, 42, 0.613);
+    margin: 0 0 20px;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 16px;
+}
+
+.description {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 16px;
+}
+
+.description h2 {
+    color: rgba(165, 42, 42, 0.613);
+}
+
+.sites {
+    margin-bottom: 40px;
+}
+
+.sites h2 {
+    color: rgba(165, 42, 42, 0.613);
+    border-bottom: 2px solid rgba(165, 42, 42, 0.3);
+    padding-bottom: 10px;
+}
+
+.sites ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.sites li {
+    padding: 12px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    border-left: 4px solid rgba(165, 42, 42, 0.613);
+}
+
+.reservation {
+    text-align: center;
+    padding: 30px;
+    background: rgba(165, 42, 42, 0.1);
+    border-radius: 16px;
+}
+
+.reservation h2 {
+    color: rgba(165, 42, 42, 0.613);
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: rgba(165, 42, 42, 0.613);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: rgb(165, 42, 42);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(165, 42, 42, 0.3);
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: rgba(165, 42, 42, 0.613);
+    border: 2px solid rgba(165, 42, 42, 0.613);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(165, 42, 42, 0.05);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .sites ul {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+}
