@@ -1,0 +1,893 @@
+/*
+	Style simple et lisible pour le site.
+	Le fichier est organise en blocs faciles a retrouver.
+*/
+
+
+:root {
+	--brown: #0b4069; /* primary blue from accueil (rgb(11,64,105)) */
+	--brown-dark: #07283d; /* darker navy */
+	--beige: #f8f8f8; /* accueil header bg */
+	--card: #ffffff;
+	--text-dark: #12202a; /* dark text for contrast */
+	--muted: #6e5a4f;
+	--accent: #a52a2a; /* reddish accent like accueil */
+	--accent-dark: #8a4848;
+	--line: #ead9cd;
+	--shadow: 0 14px 30px rgba(7, 40, 61, 0.12);
+	--radius-lg: 22px;
+	--radius-md: 16px;
+	--radius-sm: 12px;
+	--max-width: 1180px;
+
+}
+
+body {
+	margin: 0;
+	padding-top: 96px;
+	overflow-x: hidden;
+	font-family: "Manrope", Arial, sans-serif;
+	color: var(--text-dark);
+	background:
+		radial-gradient(circle at top left, rgba(165, 42, 42, 0.12), transparent 30%),
+		radial-gradient(circle at 85% 15%, rgba(165, 42, 42, 0.08), transparent 24%),
+		linear-gradient(180deg, var(--brown) 0%, var(--brown) 46%, var(--brown-dark) 100%);
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+	background-size: 48px 48px;
+	opacity: 0.22;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+main {
+	width: 100%;
+}
+
+/* Header et navigation */
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 14px 20px;
+	color: var(--brown-dark);
+	background: rgba(248, 240, 233, 0.96);
+	box-shadow: 0 2px 10px rgba(59, 36, 24, 0.16);
+	backdrop-filter: blur(8px);
+}
+
+header img {
+	width: 60px;
+	height: 60px;
+	object-fit: contain;
+}
+
+nav {
+	background-color: black;
+	border-radius: 8px;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	margin: 0;
+	padding: 0;
+	color: #fff5ee;
+}
+
+nav ul li {
+	padding: 10px 15px;
+	border-radius: 8px;
+	transition: background-color 0.3s;
+}
+
+nav ul li:hover {
+	background-color: rgba(154, 94, 60, 0.86);
+}
+
+nav ul i {
+	margin-right: 8px;
+}
+
+#home {
+	background-color: rgba(186, 116, 74, 0.82);
+}
+
+/* Bloc de section simple */
+.section,
+.destination-detail,
+.reservation {
+	width: min(var(--max-width), calc(100% - 32px));
+	margin: 0 auto 26px;
+	padding: 28px;
+	background: rgba(255, 245, 236, 0.2);
+	border: 1px solid rgba(255, 231, 214, 0.16);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow);
+}
+
+.section-head {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	margin-bottom: 24px;
+}
+
+.section-head h2,
+.hero h1,
+.info-card h3,
+.booking-card h3 {
+	margin: 0;
+	font-family: "Cormorant Garamond", Georgia, serif;
+	line-height: 1.1;
+}
+
+.section-head h2 {
+	font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.section-head p {
+	max-width: 72ch;
+	margin: 0;
+	color: rgba(255, 244, 236, 0.9);
+	line-height: 1.75;
+}
+
+/* Grille des destinations */
+.destinations,
+.destinations-grid,
+.grid-2,
+.sites ul {
+	display: grid;
+	gap: 18px;
+}
+
+.destinations,
+.destinations-grid {
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.destination-card {
+	min-height: 280px;
+	padding: 18px;
+	border-radius: 24px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	color: #fff8f2;
+	box-shadow: 0 14px 28px rgba(36, 22, 15, 0.16);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+	background:
+		linear-gradient(180deg, rgba(39, 24, 16, 0.18), rgba(39, 24, 16, 0.82)),
+		var(--card-image, linear-gradient(135deg, #8d5b37, #c9925c));
+	background-size: cover;
+	background-position: center;
+}
+
+.destination-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 20px 34px rgba(36, 22, 15, 0.22);
+}
+
+.destination-card .chip {
+	width: fit-content;
+	margin-bottom: 10px;
+	padding: 7px 11px;
+	border-radius: 999px;
+	border: 1px solid rgba(255, 235, 221, 0.2);
+	background: rgba(255, 235, 221, 0.14);
+	font-size: 0.78rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.destination-card h3 {
+	margin-bottom: 8px;
+	font-size: 2rem;
+}
+
+.destination-card p {
+	margin: 0;
+	color: rgba(255, 248, 242, 0.85);
+	line-height: 1.6;
+}
+
+/* Images des cartes */
+.meknes { --card-image: url("../images/meknes/mausolee.jpg"); }
+.fes { --card-image: url("../images/fes/fes.jpg"); }
+.casablanca { --card-image: url("../images/casa/casa.jpg"); }
+.ifrane { --card-image: url("../images/Ifrane/Ville-Ifrane-Maroc.jpg"); }
+.tanger { --card-image: url("../images/tanger/tanger.jpg"); }
+.marrakech { --card-image: url("../images/marrakech/marrakech.jpg"); }
+.chefchaouen { --card-image: url("../images/chefchaouen/chefchaouen.jpg"); }
+.merzouga { --card-image: url("../images/merzouga/merzouga.jpg"); }
+
+/* Boutons */
+.btn {
+	display: inline-block;
+	padding: 12px 24px;
+	border: none;
+	border-radius: 12px;
+	cursor: pointer;
+	text-align: center;
+	font-weight: 600;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.btn-primary {
+	color: #fff8f1;
+	background: linear-gradient(135deg, #b87a4c, #8d5b37);
+}
+
+.btn-primary:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(139, 90, 56, 0.28);
+}
+
+.btn-secondary {
+	color: #f3d4bf;
+	background: transparent;
+	border: 2px solid #c9925c;
+}
+
+.btn-secondary:hover {
+	background: rgba(201, 146, 92, 0.12);
+	transform: translateY(-2px);
+}
+
+/* Circuits et formulaire */
+.grid-2 {
+	grid-template-columns: 0.9fr 1.1fr;
+}
+
+.info-card,
+.booking-card {
+	padding: 24px;
+	border-radius: 24px;
+	background: rgba(255, 255, 255, 0.58);
+	border: 1px solid var(--line);
+}
+
+.info-card h3,
+.booking-card h3 {
+	margin-bottom: 14px;
+	font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.journey-list {
+	display: grid;
+	gap: 14px;
+}
+
+.journey-item {
+	display: flex;
+	gap: 14px;
+	align-items: flex-start;
+	padding: 16px;
+	border-radius: 18px;
+	background: rgba(255, 255, 255, 0.65);
+	border: 1px solid var(--line);
+}
+
+.journey-item b {
+	display: grid;
+	place-items: center;
+	min-width: 38px;
+	height: 38px;
+	border-radius: 14px;
+	background: rgba(165, 42, 42, 0.14);
+	color: var(--accent-dark);
+}
+
+.journey-item strong {
+	display: block;
+	margin-bottom: 4px;
+}
+
+.journey-item p,
+.footer-note,
+.section-head p {
+	color: var(--muted);
+}
+
+.booking-card {
+	display: grid;
+	gap: 16px;
+	align-content: start;
+}
+
+.form-grid {
+	display: grid;
+	gap: 12px;
+}
+
+.input,
+.select,
+.textarea {
+	width: 100%;
+	padding: 14px 16px;
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	background: #fff;
+	color: var(--text-dark);
+	font: inherit;
+}
+
+.textarea {
+	min-height: 120px;
+	resize: vertical;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+	color: #998478;
+}
+
+.footer-note {
+	font-size: 0.92rem;
+	line-height: 1.7;
+}
+
+/* Animation simple */
+.fade-in {
+	animation: rise 700ms ease both;
+}
+
+.fade-delay-1 { animation-delay: 120ms; }
+.fade-delay-2 { animation-delay: 220ms; }
+.fade-delay-3 { animation-delay: 320ms; }
+
+@keyframes rise {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Menu deroulant */
+.dropdown {
+	position: relative;
+	display: inline-block;
+	margin-top: auto;
+	padding-top: 10px;
+}
+
+.dropbtn {
+	border: none;
+	padding: 16px;
+	font-size: 16px;
+	color: white;
+	background: rgba(165, 42, 42, 0.92);
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	min-width: 140px;
+	background: #f9f4ef;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	display: block;
+	padding: 12px 16px;
+	color: #000;
+}
+
+.dropdown-content a:hover {
+	background: #f1ece8;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background: rgba(154, 94, 60, 0.98);
+}
+
+/* Pages details */
+.destination-detail {
+	max-width: 900px;
+}
+
+.destination-detail .hero {
+	position: relative;
+	overflow: hidden;
+	min-height: 320px;
+	display: grid;
+	place-items: end center;
+	padding: 28px;
+	text-align: center;
+	margin-bottom: 32px;
+	color: #fff;
+	background:
+		linear-gradient(180deg, rgba(7, 40, 61, 0.18), rgba(7, 40, 61, 0.62)),
+		var(--hero-image) center / cover no-repeat;
+}
+
+.destination-detail .hero h1 {
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	font-size: clamp(2.2rem, 5vw, 3rem);
+	color: #fff;
+	text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.destination-detail .hero img {
+	display: none;
+}
+
+.description {
+	margin-bottom: 32px;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.72);
+	border: 1px solid var(--line);
+	border-radius: 16px;
+}
+
+.description h2,
+.sites h2,
+.structured-page section > h2 {
+	color: var(--brown);
+}
+
+.sites {
+	margin-bottom: 32px;
+}
+
+.sites h2 {
+	padding-bottom: 10px;
+	border-bottom: 2px solid rgba(109, 63, 40, 0.22);
+}
+
+.sites ul {
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	list-style: none;
+	padding: 0;
+}
+
+.sites li {
+	padding: 12px;
+	border-left: 4px solid rgba(165, 42, 42, 0.9);
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.74);
+}
+
+/* Styles des pages avec .structured-page */
+.structured-page section {
+	margin-bottom: 28px;
+}
+
+.structured-page > section > h2 {
+	margin: 0 0 8px;
+	font-family: "Cormorant Garamond", Georgia, serif;
+	font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+}
+
+.structured-page > section > h3 {
+	margin: 0 0 14px;
+	color: var(--muted);
+}
+
+.structured-page .places-grid,
+.structured-page .gastro-grid,
+.structured-page .pratique-grid {
+	display: grid;
+	gap: 16px;
+}
+
+.structured-page .places-grid {
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.structured-page .gastro-grid,
+.structured-page .pratique-grid {
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.structured-page :is(.place-card, .food-items, .gastro-tips, .info-block, .quick-list) {
+	padding: 16px;
+	border: 1px solid var(--line);
+	border-radius: 16px;
+	background: rgba(255, 255, 255, 0.74);
+}
+
+.structured-page .place-card {
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.structured-page .place-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 24px rgba(59, 36, 24, 0.12);
+}
+
+.structured-page .place-num {
+	color: rgba(109, 63, 40, 0.2);
+}
+
+.structured-page .place-card h3,
+.structured-page .food-item h3,
+.structured-page .gastro-tips h3,
+.structured-page .info-block h3 {
+	margin: 0 0 6px;
+	color: var(--text-dark);
+}
+
+.structured-page .place-card p,
+.structured-page .food-item p,
+.structured-page .tip-text {
+	margin: 0;
+	color: #4c3c33;
+	line-height: 1.6;
+}
+
+.structured-page .place-tag {
+	color: rgba(109, 63, 40, 0.82);
+}
+
+.structured-page :is(.food-item, .tip-item) {
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+}
+
+.structured-page .food-item {
+	margin-bottom: 14px;
+}
+
+.structured-page .food-item:last-child,
+.structured-page .tip-item:last-child {
+	margin-bottom: 0;
+}
+
+.structured-page .food-number,
+.structured-page .tip-dot {
+	flex: 0 0 auto;
+	background: rgba(165, 42, 42, 0.9);
+}
+
+.structured-page .food-number {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.8rem;
+	font-weight: 700;
+	color: #fff;
+}
+
+.structured-page .tip-dot {
+	width: 8px;
+	height: 8px;
+	margin-top: 8px;
+	border-radius: 50%;
+}
+
+.structured-page .info-icon {
+	font-size: 1.4rem;
+	margin-bottom: 8px;
+}
+
+.structured-page .info-list {
+	margin: 0;
+	padding-left: 18px;
+}
+
+.structured-page .info-list li {
+	margin-bottom: 8px;
+	color: #3f3028;
+}
+
+.structured-page .info-list li span {
+	color: var(--muted);
+	margin-left: 4px;
+}
+
+.structured-page .quick-list ul {
+	margin: 0;
+	padding-left: 18px;
+	line-height: 1.8;
+}
+
+/* Galerie d'images et zoom */
+.image-scroll-gallery {
+	display: flex;
+	gap: 12px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 12px 0 6px;
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
+	cursor: grab;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(165, 42, 42, 0.9) #f0f0f0;
+}
+
+.image-scroll-gallery:active {
+	cursor: grabbing;
+}
+
+.image-scroll-gallery img {
+	flex: 0 0 auto;
+	width: clamp(220px, 45vw, 300px);
+	height: 180px;
+	object-fit: cover;
+	border-radius: 12px;
+	scroll-snap-align: start;
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.zoomable-image {
+	cursor: zoom-in;
+}
+
+.image-zoom-overlay {
+	position: fixed;
+	inset: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.85);
+	z-index: 9999;
+}
+
+.image-zoom-overlay.is-open {
+	display: flex;
+}
+
+.image-zoomed {
+	max-width: min(1100px, 95vw);
+	max-height: 90vh;
+	border-radius: 12px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.image-zoom-close {
+	position: absolute;
+	top: 18px;
+	right: 18px;
+	width: 42px;
+	height: 42px;
+	border: 0;
+	border-radius: 999px;
+	font-size: 28px;
+	line-height: 1;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.2);
+	cursor: pointer;
+}
+
+.image-zoom-close:hover {
+	background: rgba(255, 255, 255, 0.32);
+}
+
+.image-scroll-gallery::-webkit-scrollbar {
+	height: 8px;
+}
+
+.image-scroll-gallery::-webkit-scrollbar-track {
+	background: #f0f0f0;
+	border-radius: 999px;
+}
+
+.image-scroll-gallery::-webkit-scrollbar-thumb {
+	background: rgba(165, 42, 42, 0.9);
+	border-radius: 999px;
+}
+
+/* Bloc reservation */
+.reservation {
+	text-align: center;
+	background: rgba(255, 245, 236, 0.24);
+}
+
+.reservation h2 {
+	color: #6d3f28;
+}
+
+.buttons {
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/* Compatibilite avec d'autres pages du site */
+.topbar,
+.hero,
+.highlights,
+.intro {
+	width: min(var(--max-width), calc(100% - 32px));
+	margin: 0 auto 26px;
+	padding: 28px;
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow);
+}
+
+.topbar,
+.hero,
+.intro {
+	background: rgba(255, 245, 236, 0.2);
+}
+
+.highlights {
+	background: rgba(59, 36, 24, 0.88);
+	color: #fff;
+}
+
+.hero,
+.intro {
+	display: grid;
+	gap: 18px;
+}
+
+.hero-copy,
+.hero-panel {
+	min-height: 0;
+}
+
+.stats,
+.intro-stats {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+}
+
+.stat-box {
+	padding: 18px;
+	border-radius: 14px;
+	background: rgba(255, 255, 255, 0.72);
+}
+
+.stat-num {
+	font-family: "Cormorant Garamond", Georgia, serif;
+	font-size: 2.4rem;
+	color: #6d3f28;
+	line-height: 1;
+}
+
+.stat-unit {
+	color: var(--accent);
+}
+
+.stat-label {
+	margin-top: 6px;
+	font-size: 0.8rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.highlights-desc,
+.intro-text p,
+.place-desc,
+.place-tag,
+.highlights .section-title {
+	margin: 0;
+}
+
+.places-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 18px;
+}
+
+.place-card {
+	padding: 18px;
+	border-radius: 18px;
+	background: rgba(255, 255, 255, 0.72);
+	border: 1px solid var(--line);
+}
+
+.place-card:hover {
+	box-shadow: 0 10px 22px rgba(59, 36, 24, 0.12);
+}
+
+.place-icon {
+	display: block;
+	margin-bottom: 12px;
+	font-size: 2rem;
+}
+
+.place-num {
+	color: rgba(109, 63, 40, 0.18);
+}
+
+.place-name {
+	margin: 0 0 8px;
+	font-family: "Cormorant Garamond", Georgia, serif;
+	font-size: 1.4rem;
+}
+
+.place-desc {
+	color: var(--muted);
+	line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+	.grid-2,
+	.hero,
+	.intro,
+	.stats,
+	.intro-stats {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 720px) {
+	body {
+		padding-top: 104px;
+	}
+
+	.section,
+	.destination-detail,
+	.reservation,
+	.topbar,
+	.hero,
+	.highlights,
+	.intro {
+		width: calc(100% - 20px);
+		padding: 20px;
+		border-radius: 18px;
+	}
+
+	nav ul {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.destinations,
+	.destinations-grid,
+	.grid-2,
+	.sites ul,
+	.places-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.destination-card {
+		min-height: 240px;
+	}
+
+	.destination-card h3 {
+		font-size: 1.6rem;
+	}
+
+	.buttons {
+		flex-direction: column;
+	}
+
+	.btn,
+	.btn-primary,
+	.btn-secondary {
+		width: 100%;
+	}
+}

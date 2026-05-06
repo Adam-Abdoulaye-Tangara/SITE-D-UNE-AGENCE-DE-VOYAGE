@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle_home_page</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h3><span>EAGLE</span> TRAVEL</h3>
+        <img src="logo.jpeg" alt="logo">
+    </header>
+<!--barre de navigation principale-->
+    <nav>
+        <ul>
+            <li id="home"><i class="fa-solid fa-house"></i><a href="#">Accueil</a></li>
+            <li><i class="fa-solid fa-map-marker-alt"></i><a href="../pages/destination.html">Destination</a></li>
+            <li><i class="fa-solid fa-lightbulb"></i><a href="#">Quelques tips</a></li>
+            <li><i class="fa-solid fa-plane"></i><a href="#">Où partir</a></li>
+            <li><i class="fa-solid fa-leaf"></i><a href="#">Notre engagement</a></li>
+            <li><i class="fa-solid fa-user"></i><a href="#">Connexion</a></li>
+        </ul>
+    </nav>
+<!--Hero de la page-->
+    <section class="hero">
+        <img src="hero.jpg" alt="image attrayante">
+        <p>Parce que le monde est remplie de <span>terre inexplorée</span> </p>
+        <p><i>Qu'attender vous pour déployer vos ailes et prendre votre envole
+                avec nous vers de nouveau horizons</i></p>
+        <form id="formulaire" action="">
+            <label for="recherche">Trouver votre destination</label>
+            
+            <input type="text">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i></button>
+        </form>
+        
+    </section>
+
+    <!--Carte des destinations-->
+    <section class="vitrine">
+        <h2>Nos destinations</h2>
+        <div class="carte">
+            <div class="destination">
+                <img src="marrakech.jpg" alt="marrakech">
+                <h3>Marrakech</h3>
+                <p>Decouvrez la beauté de Marrakech, ville du sud du Maroc.</p>
+            </div>
+            <div class="destination">
+                <img src="ifrane.jpg" alt="ifrane">
+                <h3>Ifrane</h3>
+                <p>Decouvrez la beauté d'Ifrane, avec ses montagnes et ses paysages enneigés.</p>
+            </div>
+            <div class="destination">
+                <img src="h.jpg" alt="Chefchaouen">
+                <h3>Chefchaouen</h3>
+                <p>Decouvrez la beauté de Chefchaouen, ville bleue du Maroc.</p>
+            </div>
+            <div class="destination">
+                <img src="fes.jpg" alt="fes">
+                <h3>Fes</h3>
+                <p>Decouvrez la beauté de Fes, ville historique du Maroc.</p>
+            </div>
+            <button>Voir tout</button>
+        </div>
+    </section>
+
+    <!--Pourquoi nous choisir? -->
+    <section>
+        <h2>Pourquoi nous choisir?</h2>
+        <div class="avantages">
+            <div class="avantage">
+                <i class="fa-solid fa-thumbs-up"></i>
+                <h3>Service de qualité</h3>
+                <p>Nous offrons un service de qualité pour garantir votre satisfaction.</p>
+            </div>
+            <div class="avantage">
+                <i class="fa-solid fa-globe"></i>
+                <h3>Destinations variées</h3>
+                <p>Nous proposons une large gamme de destinations pour tous les goûts.</p>
+            </div>
+            <div class="avantage">
+                <i class="fa-solid fa-wallet"></i>
+                <h3>Prix compétitifs</h3>
+                <p>Nous offrons des prix compétitifs pour rendre vos voyages abordables.</p>
+            </div>
+        </div>
+        <div>
+            <p>Laissez votre avis en commentaire</p>
+            <form action="">
+                <label for="commentaire">Votre commentaire:</label>
+                <textarea id="commentaire" name="commentaire" rows="4" cols="50"></textarea>
+                <button type="submit">Envoyer</button>
+        </div>
+    </section>
+    <!--Footer-->
+    <footer>
+        <p>&copy; 2023 Eagle Travel. Tous droits réservés.</p>
+        <p>Contactez-nous sur :</p>
+        <ul>
+            <li><a href="">facebook</a> <i class="fa-brands fa-facebook"></i></li>
+            <li><a href="">instagram</a> <i class="fa-brands fa-instagram"></i></li>
+            <li><a href="">whatsapp</a> <i class="fa-brands fa-whatsapp"></i></li>
+            <li><a href="mailto:contact@eagletravel.com">gmail</a> <i class="fa-brands fa-gmail"></i></li>
+        </ul>
+    </footer>
+</body>
+</html>

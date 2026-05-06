@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - EAGLES TRAVEL</title>
+    <link rel="stylesheet" href="Style.css">
+    <meta name="description" content="Découvrez les destinations incontournables du Maroc avec EAGLES TRAVEL. Circuits, réservations et conseils pour un voyage inoubliable." />
+</head>
+<body>
+    <header>
+        <h3><span>EAGLES</span> TRAVEL</h3>
+        <img src="../accueil/logo.jpeg" alt="logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li id="home"><i class="fa-solid fa-house"></i><a href="../accueil/index.html">Accueil</a></li>
+            <li><i class="fa-solid fa-map-marker-alt"></i><a href="destination.html">Destination</a></li>
+            <li><i class="fa-solid fa-lightbulb"></i><a href="../accueil/tips.html">Quelques tips</a></li>
+            <li><i class="fa-solid fa-plane"></i><a href="../accueil/ou_partir.html">Où partir</a></li>
+            <li><i class="fa-solid fa-leaf"></i><a href="../accueil/notre_engagement.html">Notre engagement</a></li>
+            <li><i class="fa-solid fa-user"></i><a href="../accueil/connexion.html">Connexion</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="section fade-in fade-delay-1" id="destinations">
+            <div class="section-head">
+                <div>
+                    <h2>Explorez nos destinations</h2>
+                    <p>Découvrez les joyaux du Maroc - des médinas anciennes aux déserts infinis, des montagnes majestueuses aux villes cosmopolites.</p>
+                </div>
+            </div>
+
+            <div class="destinations-grid">
+                <a href="mekhnes.html" class="destination-card meknes">
+                    <h3>Meknes</h3>
+                    <p>Une halte plus calme, elegante et ideale pour un circuit culturel.</p>
+                </a>
+
+                <a href="fes.html" class="destination-card fes">
+                    <h3>Fes</h3>
+                    <p>Medina, artisanat, ambiance authentique et profondeur historique.</p>
+                </a>
+                
+                <a href="casablanca.html" class="destination-card casablanca">
+                    <h3>Casablanca</h3>
+                    <p>Design urbain, ocean et energie moderne pour un voyage contraste.</p>
+                </a>
+
+                <a href="ifrane.html" class="destination-card ifrane">
+                    <h3>Ifrane</h3>
+                    <p>Air pur, foret, montagnes et ambiance douce pour une pause detente.</p>
+                </a>
+                        
+                <a href="tanger.html" class="destination-card tanger">
+                    <h3>Tanger</h3>
+                    <p>Horizons marins, culture cosmopolite et charme du nord du Maroc.</p>
+                </a>
+
+                <a href="marrakech.html" class="destination-card marrakech">
+                    <h3>Marrakech</h3>
+                    <p>Sensation, couleurs, souks et experiences premium au coeur du sud.</p>
+                </a>
+
+                <a href="chefchaouen.html" class="destination-card chefchaouen">
+                    <h3>Chefchaouen</h3>
+                    <p>Ruelles bleues, artisanat local et nature spectaculaire du Rif.</p>
+                </a>
+
+                <a href="merzouga.html" class="destination-card merzouga">
+                    <h3>Merzouga</h3>
+                    <p>Dunes a perte de vue, nuits etoilees et culture nomade du Sahara.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="section fade-in fade-delay-2" id="circuits">
+            <div class="section-head">
+                <div>
+                    <h2>Planifiez votre voyage</h2>
+                    <p>Parcourez nos circuits guides et demandez votre devis personalize.</p>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3>Notre approche</h3>
+                    <div class="journey-list">
+                        <div class="journey-item">
+                            <b>1</b>
+                            <div>
+                                <strong>Choisir la destination</strong>
+                                <p>Explorez nos 8 destinations avec descriptions et images.</p>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <b>2</b>
+                            <div>
+                                <strong>Voir les details</strong>
+                                <p>Decouvrez les sites, activites, gastronomie et informations pratiques.</p>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <b>3</b>
+                            <div>
+                                <strong>Demander un devis</strong>
+                                <p>Formulaire rapide pour votre demande de reservation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-card" id="reservation">
+                    <div>
+                        <h3>Demander votre devis</h3>
+                        <p style="margin: 0; color: var(--muted); line-height: 1.7;">
+                            Remplissez ce formulaire pour une offre personnalisee.
+                        </p>
+                    </div>
+                    <div class="form-grid">
+                        <input class="input" type="text" placeholder="Nom et prenom" />
+                        <input class="input" type="email" placeholder="Adresse email" />
+                        <select class="select">
+                            <option>Destination souhaitee</option>
+                            <option>Fes</option>
+                            <option>Meknes</option>
+                            <option>Casablanca</option>
+                            <option>Ifrane</option>
+                            <option>Tanger</option>
+                            <option>Marrakech</option>
+                            <option>Chefchaouen</option>
+                            <option>Merzouga</option>
+                        </select>
+                        <input class="input" type="text" placeholder="Nombre de voyageurs" />
+                        <textarea class="textarea" placeholder="Dates, budget, preferences..."></textarea>
+                        <a class="btn btn-primary" href="#contact">Envoyer la demande</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fade-in fade-delay-3" id="contact">
+            <div class="section-head">
+                <div>
+                    <h2>Nous contacter</h2>
+                    <p>Besoin d'aide pour preparer votre voyage ? Contactez-nous !</p>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3>Pourquoi nous choisir</h3>
+                    <div class="journey-list">
+                        <div class="journey-item">
+                            <b>✓</b>
+                            <div>
+                                <strong>Expertise locale</strong>
+                                <p>Connaissance approfondie de toutes les destinations.</p>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <b>✓</b>
+                            <div>
+                                <strong>Service personnalise</strong>
+                                <p>Circuits adaptes a vos envies et votre budget.</p>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <b>✓</b>
+                            <div>
+                                <strong>Support 24/7</strong>
+                                <p>Assistance tout au long de votre voyage.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Nos coordonnees</h3>
+                    <p style="color: var(--muted); line-height: 1.8; margin: 0 0 24px 0;">
+                        <strong>WhatsApp:</strong> +212 XXX XX XX XX<br />
+                        <strong>Email:</strong> contact@eaglestravel.ma<br />
+                        <strong>Instagram:</strong> @eaglestravel.ma<br />
+                        <strong>Horaires:</strong> Lun-Ven 9h-18h (GMT+1)
+                    </p>
+                    <div style="display: grid; gap: 12px;">
+                        <a class="btn btn-secondary" href="#destinations">Voir les destinations</a>
+                        <a class="btn btn-primary" href="#reservation">Planifier maintenant</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EAGLES TRAVEL. Tous droits reserves.</p>
+    </footer>
+</body>
+</html>
