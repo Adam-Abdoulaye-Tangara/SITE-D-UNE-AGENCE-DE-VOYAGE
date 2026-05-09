@@ -1,4 +1,4 @@
-/* ===== VARIABLES ===== */
+/* VARIABLES */
 :root {
     --primaire:      #1a6b5a;
     --primaire-dark: #124d41;
@@ -94,7 +94,12 @@ nav ul li {
     color: rgba(255, 255, 255, 0.82);
     transition: var(--transition);
 }
-
+nav ul li a {
+    color: inherit;
+    text-decoration: none;
+    /* display: flex;
+    align-items: center; */
+}
 #home {
     color: var(--secondaire);
     background-color: rgba(244, 161, 36, 0.1);
