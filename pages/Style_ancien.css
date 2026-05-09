@@ -3,7 +3,6 @@
 	Toutes les couleurs, ombres et transitions sont alignées sur les variables :root.
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap');
 
 :root {
 	--primaire:      #1a6b5a;
@@ -29,9 +28,9 @@
 
 body {
 	margin: 0;
-	padding-top: 70px;
+	padding-top: 96px;
 	overflow-x: hidden;
-	font-family: 'Jost', sans-serif;
+	font-family: "Manrope", Arial, sans-serif;
 	color: var(--texte);
 	background:
 		radial-gradient(circle at top left, rgba(26, 107, 90, 0.12), transparent 30%),
@@ -60,84 +59,73 @@ main {
 	width: 100%;
 }
 
-/* Entete de la page */
+/* Header et navigation */
 header {
-    position: fixed; 
-    top: 0;
-    left:0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
-    background: linear-gradient(135deg, var(--sombre) 0%, var(--primaire-dark) 100%);
-    
-}
-header h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: var(--blanc);
-    letter-spacing: 2px;
-    text-transform: uppercase;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 14px 20px;
+	color: var(--blanc);
+	background: linear-gradient(135deg, var(--sombre) 0%, var(--primaire-dark) 100%);
+	box-shadow: var(--ombre);
+	backdrop-filter: blur(8px);
 }
 
-header h3 span {
-    color: var(--secondaire);
-    font-style: italic;
+header img {
+	width: 60px;
+	height: 60px;
+	object-fit: contain;
+	border-radius: 50%;
+	border: 2px solid var(--secondaire);
+	padding: 3px;
+	transition: var(--transition);
 }
-header img{
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    border-radius: 50%;
-    border: 2px solid var(--secondaire);
-    padding: 3px;
-    transition: var(--transition);
 
-}
 header img:hover {
-    transform: rotate(10deg) scale(1.1);
-    box-shadow: 0 0 20px rgba(244, 161, 36, 0.5);
+	transform: rotate(10deg) scale(1.1);
+	box-shadow: 0 0 20px rgba(244, 161, 36, 0.5);
 }
 
-
-/*Barre de navigation*/
 nav {
-    background: linear-gradient(90deg, var(--sombre) 0%, var(--sombre-mid) 100%);
-    border-bottom: 2px solid var(--primaire);
-	margin:0px;
+	background: linear-gradient(90deg, var(--sombre) 0%, var(--sombre-mid) 100%);
+	border-radius: var(--radius-sm);
+	border-bottom: 2px solid var(--primaire);
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-	margin:20px 0px 0px 0px;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	margin: 0;
+	padding: 0;
+	color: rgba(255, 255, 255, 0.82);
 }
 
 nav ul li {
-    padding: 10px 15px;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.82);
-    transition: var(--transition);
+	padding: 10px 15px;
+	border-radius: var(--radius-sm);
+	transition: var(--transition);
+}
+
+nav ul li:hover {
+	color: var(--secondaire);
+	background-color: rgba(244, 161, 36, 0.08);
+}
+
+nav ul i {
+	margin-right: 8px;
 }
 
 #home {
-    color: var(--secondaire);
-    background-color: rgba(244, 161, 36, 0.1);
+	color: var(--secondaire);
+	background-color: rgba(244, 161, 36, 0.1);
 }
-nav ul li:hover {
-    color: var(--secondaire);
-    background-color: rgba(244, 161, 36, 0.08);
-}  
-nav ul i {
-    margin-right: 8px;
-}
-
 
 /* Bloc de section simple */
 .section,
@@ -290,16 +278,14 @@ nav ul i {
 .booking-card {
 	padding: 24px;
 	border-radius: var(--radius);
-	background: rgba(255, 255, 255, 0.07);
-	border: 1px solid rgba(255, 255, 255, 0.12);
-	color: var(--clair);
+	background: rgba(247, 243, 237, 0.58);
+	border: 1px solid var(--line);
 }
 
 .info-card h3,
 .booking-card h3 {
 	margin-bottom: 14px;
 	font-size: clamp(1.8rem, 3vw, 2.5rem);
-	color: var(--blanc);
 }
 
 .journey-list {
@@ -313,9 +299,8 @@ nav ul i {
 	align-items: flex-start;
 	padding: 16px;
 	border-radius: var(--radius);
-	background: rgba(255, 255, 255, 0.06);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	color: var(--clair);
+	background: rgba(247, 243, 237, 0.65);
+	border: 1px solid var(--line);
 }
 
 .journey-item b {
@@ -324,20 +309,19 @@ nav ul i {
 	min-width: 38px;
 	height: 38px;
 	border-radius: var(--radius-sm);
-	background: rgba(244, 161, 36, 0.15);
-	color: var(--secondaire);
+	background: rgba(26, 107, 90, 0.14);
+	color: var(--primaire);
 }
 
 .journey-item strong {
 	display: block;
 	margin-bottom: 4px;
-	color: var(--blanc);
 }
 
 .journey-item p,
 .footer-note,
 .section-head p {
-	color: rgba(247, 243, 237, 0.65);
+	color: var(--texte-doux);
 }
 
 .booking-card {
@@ -489,39 +473,24 @@ nav ul i {
 .description {
 	margin-bottom: 32px;
 	padding: 20px;
-	background: rgba(255, 255, 255, 0.06);
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: rgba(247, 243, 237, 0.72);
+	border: 1px solid var(--line);
 	border-radius: var(--radius-sm);
-	color: var(--clair);
 }
 
 .description h2,
 .sites h2,
-.gastro h2,
-.pratique h2,
 .structured-page section > h2 {
-	color: var(--clair);
+	color: var(--primaire);
 }
 
-.description h2 {
-	margin: 0 0 6px;
-	color: var(--clair);
-}
-
-.description h3 {
-	margin: 0 0 14px;
-	color: rgba(247, 243, 237, 0.6);
-}
-
-.description p {
-	color: rgba(247, 243, 237, 0.8);
-	line-height: 1.75;
-	margin-bottom: 10px;
+.sites {
+	margin-bottom: 32px;
 }
 
 .sites h2 {
 	padding-bottom: 10px;
-	border-bottom: 2px solid rgba(244, 161, 36, 0.4);
+	border-bottom: 2px solid rgba(26, 107, 90, 0.22);
 }
 
 .sites ul {
@@ -532,10 +501,9 @@ nav ul i {
 
 .sites li {
 	padding: 12px;
-	border-left: 4px solid var(--secondaire);
+	border-left: 4px solid var(--primaire);
 	border-radius: var(--radius-sm);
-	background: rgba(255, 255, 255, 0.06);
-	color: var(--clair);
+	background: rgba(247, 243, 237, 0.74);
 }
 
 /* Styles des pages avec .structured-page */
@@ -551,7 +519,7 @@ nav ul i {
 
 .structured-page > section > h3 {
 	margin: 0 0 14px;
-	color: rgba(247, 243, 237, 0.6);
+	color: var(--texte-doux);
 }
 
 .structured-page .places-grid,
@@ -572,10 +540,9 @@ nav ul i {
 
 .structured-page :is(.place-card, .food-items, .gastro-tips, .info-block, .quick-list) {
 	padding: 16px;
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 1px solid var(--line);
 	border-radius: var(--radius-sm);
-	background: rgba(255, 255, 255, 0.06);
-	color: var(--clair);
+	background: rgba(247, 243, 237, 0.74);
 }
 
 .structured-page .place-card {
@@ -588,7 +555,7 @@ nav ul i {
 }
 
 .structured-page .place-num {
-	color: rgba(244, 161, 36, 0.35);
+	color: rgba(26, 107, 90, 0.2);
 }
 
 .structured-page .place-card h3,
@@ -596,14 +563,14 @@ nav ul i {
 .structured-page .gastro-tips h3,
 .structured-page .info-block h3 {
 	margin: 0 0 6px;
-	color: var(--blanc);
+	color: var(--texte);
 }
 
 .structured-page .place-card p,
 .structured-page .food-item p,
 .structured-page .tip-text {
 	margin: 0;
-	color: rgba(247, 243, 237, 0.7);
+	color: var(--texte-doux);
 	line-height: 1.6;
 }
 
@@ -663,11 +630,11 @@ nav ul i {
 
 .structured-page .info-list li {
 	margin-bottom: 8px;
-	color: var(--clair);
+	color: var(--texte);
 }
 
 .structured-page .info-list li span {
-	color: rgba(247, 243, 237, 0.55);
+	color: var(--texte-doux);
 	margin-left: 4px;
 }
 
@@ -772,7 +739,7 @@ nav ul i {
 }
 
 .reservation h2 {
-	color: var(--clair);
+	color: var(--primaire-dark);
 }
 
 .buttons {
