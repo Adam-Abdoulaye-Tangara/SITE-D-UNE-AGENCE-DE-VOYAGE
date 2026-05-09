@@ -6,7 +6,7 @@
     <title>Eagle_home_page</title>
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -27,16 +27,16 @@
 <!--Hero de la page-->
     <section class="hero">
         <img src="hero.jpg" alt="image attrayante">
-        <p>Parce que le monde est remplie de <span>terre inexplorée</span> </p>
-        <p><i>Qu'attender vous pour déployer vos ailes et prendre votre envole
+        <div class="hero-content">
+            <p>Parce que le monde est remplie de <span>terre inexplorée</span> </p>
+            <p><i>Qu'attender vous pour déployer vos ailes et prendre votre envole
                 avec nous vers de nouveau horizons</i></p>
-        <form id="formulaire" action="">
-            <label for="recherche">Trouver votre destination</label>
-            
-            <input type="text">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i></button>
-        </form>
-        
+            <form id="formulaire" action="">
+                <label for="recherche">Trouver votre destination</label>
+                <input type="text" placeholder="Meknes, Ifrane, Marrakech..." id="recherche">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i></button>
+            </form>
+        </div>
     </section>
 
     <!--Carte des destinations-->
@@ -68,7 +68,7 @@
     </section>
 
     <!--Pourquoi nous choisir? -->
-    <section>
+    <section class="pourquoi">
         <h2>Pourquoi nous choisir?</h2>
         <div class="avantages">
             <div class="avantage">
@@ -93,12 +93,13 @@
                 <label for="commentaire">Votre commentaire:</label>
                 <textarea id="commentaire" name="commentaire" rows="4" cols="50"></textarea>
                 <button type="submit">Envoyer</button>
+            </form>
         </div>
     </section>
     <!--Footer-->
     <footer>
-        <p>&copy; 2023 Eagle Travel. Tous droits réservés.</p>
-        <p>Contactez-nous sur :</p>
+        <p>&copy; 2026 Eagle Travel. Tous droits réservés.</p>
+        <p>Rejoignez-nous sur :</p>
         <ul>
             <li><a href="">facebook</a> <i class="fa-brands fa-facebook"></i></li>
             <li><a href="">instagram</a> <i class="fa-brands fa-instagram"></i></li>
