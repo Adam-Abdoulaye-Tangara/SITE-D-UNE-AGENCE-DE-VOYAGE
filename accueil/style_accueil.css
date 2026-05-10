@@ -98,10 +98,10 @@ nav ul li {
     transition: var(--transition);
 }
 
-#home {
+/* #home {
     color: var(--secondaire);
     background-color: rgba(244, 161, 36, 0.1);
-}
+} */
 nav ul li:hover {
     color: var(--secondaire);
     background-color: rgba(244, 161, 36, 0.08);

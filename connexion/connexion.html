@@ -3,11 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Style.css">
-
+    <title>Connexion - Eagle Travel</title>
+    <link rel="stylesheet" href="style_connexion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-    
+
+    <header>
+        <h3><span>EAGLE</span> TRAVEL</h3>
+        <img src="../accueil/logo.jpeg" alt="logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li id="home"><a href="../accueil/index_accueil.html"><i class="fa-solid fa-house"></i>Accueil</a></li>
+            <li><a href="../pages/destination.html"><i class="fa-solid fa-map-marker-alt"></i>Destination</a></li>
+            <li><a href="connexion.html"><i class="fa-solid fa-user"></i>Connexion</a></li>
+        </ul>
+    </nav>
+
+    <main class="connexion-page">
+
+        <div class="connexion-card">
+            
+            <!-- Titre -->
+            <div class="connexion-header">
+                <h1>Bienvenue</h1>
+                <p>Connectez-vous ou créez votre compte Eagle Travel</p>
+            </div>
+
+            <!-- Onglets -->
+            <div class="tabs">
+                <button class="tab active" id="tab-login">Se connecter</button>
+                <button class="tab" id="tab-register">S'inscrire</button>
+            </div>
+
+            <!-- Formulaire Connexion -->
+            <form class="form-panel active" id="form-login">
+                <div class="form-group">
+                    <label for="login-email">
+                    <i class="fa-solid fa-envelope"></i> Email
+                    </label>
+                    <input type="email" id="login-email" placeholder="votre@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">
+                        <i class="fa-solid fa-lock"></i> Mot de passe
+                    </label>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+
+                <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+
+                <button type="submit" class="btn-connexion">
+                    Se connecter <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <!-- Formulaire Inscription -->
+            <form class="form-panel" id="form-register">
+            <div class="form-group">
+                <label for="reg-nom">
+                    <i class="fa-solid fa-user"></i> Nom complet
+                </label>
+                <input type="text" id="reg-nom" placeholder="Votre nom et prénom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reg-email">
+                    <i class="fa-solid fa-envelope"></i> Email
+                </label>
+                <input type="email" id="reg-email" placeholder="votre@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reg-password">
+                    <i class="fa-solid fa-lock"></i> Mot de passe
+                </label>
+                <input type="password" id="reg-password" placeholder="••••••••" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reg-confirm">
+                    <i class="fa-solid fa-lock"></i> Confirmer le mot de passe
+                </label>
+                <input type="password" id="reg-confirm" placeholder="••••••••" required>
+            </div>
+
+             <button type="submit" class="btn-connexion">
+                Créer mon compte <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </form>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Eagle Travel. Tous droits réservés.</p>
+    </footer>
+    <script>
+    const tabs = document.querySelectorAll('.tab');
+    const panels = document.querySelectorAll('.form-panel');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Enlever active de tout
+            tabs.forEach(t => t.classList.remove('active'));
+            panels.forEach(p => p.classList.remove('active'));
+
+            // Ajouter active au bon onglet et panneau
+            tab.classList.add('active');
+
+            if (tab.id === 'tab-login') {
+                document.getElementById('form-login').classList.add('active');
+            } else {
+                document.getElementById('form-register').classList.add('active');
+            }
+        });
+    });
+    document.getElementById('form-register').addEventListener('submit', function(e) {
+    const password = document.getElementById('reg-password').value;
+    const confirm = document.getElementById('reg-confirm').value;
+
+    if (password !== confirm) {
+        e.preventDefault(); // empêche l'envoi du formulaire
+        alert('Les mots de passe ne correspondent pas !');
+    }
+});
+</script>
+<script src="../pages/eagle.js"></script>
 </body>
 </html>

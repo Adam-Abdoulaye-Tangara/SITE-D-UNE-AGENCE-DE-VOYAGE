@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page introuvable · Eagle Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primaire:      #1a6b5a;
+            --primaire-dark: #124d41;
+            --secondaire:    #f4a124;
+            --sombre:        #0f1923;
+            --sombre-mid:    #1c2b38;
+            --clair:         #f7f3ed;
+            --blanc:         #ffffff;
+            --texte-doux:    #5a6370;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(135deg, var(--sombre) 0%, var(--sombre-mid) 60%, var(--primaire-dark) 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: var(--blanc);
+        }
+
+        /* ===== ÉTOILES EN FOND ===== */
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: twinkle var(--dur) ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50%       { opacity: 1;   transform: scale(1.4); }
+        }
+
+        /* ===== CONTENU PRINCIPAL ===== */
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 640px;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== AIGLE ANIMÉ ===== */
+        .eagle-wrap {
+            font-size: 5rem;
+            margin-bottom: 8px;
+            display: block;
+            animation: soar 3s ease-in-out infinite;
+            filter: drop-shadow(0 8px 24px rgba(244, 161, 36, 0.3));
+        }
+
+        @keyframes soar {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50%       { transform: translateY(-16px) rotate(3deg); }
+        }
+
+        /* ===== 404 ===== */
+        .code-404 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(6rem, 18vw, 11rem);
+            font-weight: 700;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--secondaire) 0%, #fff8e7 50%, var(--secondaire) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -4px;
+            margin-bottom: 4px;
+            filter: drop-shadow(0 4px 24px rgba(244, 161, 36, 0.2));
+        }
+
+        /* ===== TEXTES ===== */
+        .titre {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 600;
+            color: var(--blanc);
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .description span {
+            color: var(--secondaire);
+            font-weight: 500;
+        }
+
+        /* ===== BOUTONS ===== */
+        .actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--secondaire), var(--primaire-dark) 180%);
+            color: var(--blanc);
+            border: none;
+            border-radius: 50px;
+            font-family: 'Jost', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.35s ease;
+            box-shadow: 0 6px 24px rgba(244, 161, 36, 0.3);
+        }
+
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(244, 161, 36, 0.45);
+        }
+
+        .btn-dest {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.8);
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-family: 'Jost', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.35s ease;
+        }
+
+        .btn-dest:hover {
+            border-color: var(--secondaire);
+            color: var(--secondaire);
+            transform: translateY(-3px);
+        }
+
+        /* ===== SÉPARATEUR ===== */
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--secondaire), transparent);
+            margin: 32px auto;
+            border-radius: 2px;
+        }
+
+        /* ===== DESTINATIONS RAPIDES ===== */
+        .quick-links-title {
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.35);
+            margin-bottom: 16px;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .quick-link {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .quick-link:hover {
+            background: rgba(244, 161, 36, 0.1);
+            border-color: rgba(244, 161, 36, 0.4);
+            color: var(--secondaire);
+            transform: translateY(-2px);
+        }
+
+        /* ===== LOGO EN BAS ===== */
+        .brand {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            color: rgba(255, 255, 255, 0.15);
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 480px) {
+            .actions { flex-direction: column; align-items: center; }
+            .btn-home, .btn-dest { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Étoiles générées par JS -->
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+
+        <!-- Aigle -->
+        <span class="eagle-wrap">🦅</span>
+
+        <!-- Code 404 -->
+        <div class="code-404">404</div>
+
+        <!-- Texte -->
+        <h1 class="titre">Cette page s'est envolée...</h1>
+        <p class="description">
+            Il semble que vous ayez pris le mauvais chemin.<br>
+            Même nos meilleurs guides n'ont pas trouvé
+            <span>cette destination</span> sur la carte.
+        </p>
+
+        <!-- Boutons principaux -->
+        <div class="actions">
+            <a href="accueil/index_accueil.html" class="btn-home">
+                <i class="fa-solid fa-house"></i>
+                Retour à l'accueil
+            </a>
+            <a href="pages/destination.html" class="btn-dest">
+                <i class="fa-solid fa-map-marker-alt"></i>
+                Voir les destinations
+            </a>
+        </div>
+
+        <!-- Séparateur -->
+        <div class="divider"></div>
+
+        <!-- Liens rapides -->
+        <p class="quick-links-title">Destinations populaires</p>
+        <div class="quick-links">
+            <a href="pages/marrakech.html"    class="quick-link">Marrakech</a>
+            <a href="pages/fes.html"          class="quick-link">Fès</a>
+            <a href="pages/chefchaouen.html"  class="quick-link">Chefchaouen</a>
+            <a href="pages/ifrane.html"       class="quick-link">Ifrane</a>
+            <a href="pages/tanger.html"       class="quick-link">Tanger</a>
+            <a href="pages/merzouga.html"     class="quick-link">Merzouga</a>
+        </div>
+
+    </div>
+
+    <!-- Marque -->
+    <div class="brand">Eagle Travel · Maroc</div>
+
+    <script>
+        // Générer les étoiles aléatoirement
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top  = Math.random() * 100 + '%';
+            star.style.setProperty('--dur', (2 + Math.random() * 3).toFixed(1) + 's');
+            star.style.animationDelay = (Math.random() * 3).toFixed(1) + 's';
+            // Quelques étoiles plus grandes
+            if (Math.random() > 0.85) {
+                star.style.width  = '3px';
+                star.style.height = '3px';
+            }
+            starsContainer.appendChild(star);
+        }
+    </script>
+
+</body>
+</html>
